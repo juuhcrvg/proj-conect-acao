@@ -1,7 +1,7 @@
 🌐 ConectAção
 Plataforma web para conectar voluntários e eventos sociais. Desenvolvida com foco em engajamento comunitário, interatividade e acessibilidade.
 
-Site : https://juuhcrvg.github.io/coonect-acao/
+Site : https://juuhcrvg.github.io/proj-conect-acao/
 
 🛠️ Tecnologias utilizadas:
 <br>
