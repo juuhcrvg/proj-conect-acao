@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voluntários - Conect Ação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/respoetema.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../public/img/Picsart_25-05-20_22-23-51-427.png" alt="Logo da Plataforma" id="logo">
+                <h1>ConectAção</h1>
+            </div>
+    
+            <nav class="main-nav"> 
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="events.html">Eventos</a></li>
+                    <li><a href="volunteers.html" class="nav-link">Voluntários</a></li>
+                    <li><a href="profile.html" class="nav-link">Perfil</a></li>
+                    <li><a href="reports.html" class="nav-link">Relatórios</a></li>
+                </ul>
+            </nav>
+    
+        
+
+            <!-- BOTÃO TEMA -->
+            <button id="toggle-theme" title="Alternar tema">
+                🌙
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </header>
+    <!--JS DO MENU RESPONSIVO-->
+    <script>
+        const toggleMenu = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggleMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggleMenu.classList.toggle('hidden'); // <- nova linha
+        });
+    </script>
+
+
+
+    <main class="container">
+        <section id="register-volunteer">
+            <h3>Cadastro de Voluntário</h3>
+            <form id="register-volunteer-form">
+                <div>
+                    <label for="volunteer-name">Nome Completo:*</label>
+                    <input type="text" id="volunteer-name" name="volunteer-name" required>
+                </div>
+                <div>
+                    <label for="volunteer-email">Email:*</label>
+                    <input type="email" id="volunteer-email" name="volunteer-email" required>
+                </div>
+                <div>
+                    <label for="volunteer-phone">Telefone:*</label>
+                    <input type="text" id="volunteer-phone" name="volunteer-phone" placeholder="(XX) XXXXX-XXXX"
+                        required>
+                </div>
+                <div>
+                    <label>Áreas de Interesse:</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="volunteer-interests" value="educacao"> Educação</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="saude"> Saúde</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="meio-ambiente"> Meio
+                            Ambiente</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="animais"> Causa Animal</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="cultura"> Cultura</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="esportes"> Esportes</label>
+                        <label><input type="checkbox" name="volunteer-interests" value="outros"> Outros</label>
+                    </div>
+                </div>
+                <div>
+                    <label for="volunteer-availability">Disponibilidade (Ex: Finais de semana, Noites de Terça):</label>
+                    <textarea id="volunteer-availability" name="volunteer-availability"></textarea>
+                </div>
+                <button type="submit">Quero Ser Voluntário</button>
+            </form>
+        </section>
+
+        <section id="volunteer-list">
+            <h3>Nossos Voluntários</h3>
+            <div class="volunteer-list-container">
+
+            </div>
+        </section>
+    </main>
+
+    <section id="voluntarios-pelo-mundo">
+        <div class="container">
+            <h2>Voluntários pelo Mundo</h2>
+            <div class="gallery">
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/01vou.jpg', 'O voluntariado na África é mais do que uma simples viagem – é uma jornada de empatia, solidariedade e crescimento pessoal. Em um continente tão rico em diversidade cultural, natural e humana, milhares de pessoas ao redor do mundo encontram a oportunidade de contribuir com causas sociais, ambientais e educacionais, ao mesmo tempo em que vivenciam experiências únicas e profundamente marcantes.')">
+                    <img src="img/01vou.jpg" alt="Voluntariado na África">
+                    <p><a href="https://www.volunteeringsolutions.com/pt/volunteer-in-africa">Voluntariado na África</a>
+                    </p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/02voou.webp', 'Fazer voluntariado na Austrália é unir o desejo de ajudar com a oportunidade de explorar um país fascinante, conhecido por suas paisagens deslumbrantes, vida selvagem única e cultura acolhedora. Seja em grandes cidades como Sydney e Melbourne, ou em regiões mais remotas, os programas de voluntariado oferecem experiências significativas tanto para quem ajuda quanto para quem recebe o apoio.')">
+                    <img src="img/02voou.webp" alt="Voluntariado na Austrália">
+                    <p><a href="https://tagarela.com.au/trabalho-voluntario-na-australia/">Voluntariado na Austrália</a>
+                    </p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/05voou.jpg', 'Os projetos de voluntariado no Nepal são tão diversos quanto seu território. Muitos voluntários atuam em áreas como educação infantil, ensino de inglês, apoio a comunidades afetadas por desastres naturais, saúde pública e empoderamento de mulheres em situação de vulnerabilidade. Há também iniciativas ligadas à preservação ambiental e à reconstrução de vilarejos afetados por terremotos.')">
+                    <img src="img/05voou.jpg" alt="Voluntariado no Nepal">
+                    <p><a href="https://www.volunteerworld.com/pt/volunteer-abroad/nepal">Voluntariado no Nepal</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/06voou.jpg', 'Os programas de voluntariado costarriquenhos são bastante variados e incluem conservação da vida selvagem (como tartarugas marinhas, preguiças e macacos), reflorestamento, educação ambiental, agricultura orgânica e apoio a comunidades rurais e indígenas. Há também iniciativas sociais em escolas, centros comunitários e projetos de empoderamento feminino.')">
+                    <img src="img/06voou.jpg" alt="Voluntariado na Costa Rica">
+                    <p><a href="https://www.volunteerworld.com/pt/volunteer-abroad/costa-rica">Voluntariado na Costa
+                            Rica</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/07voou.avif', 'A ilha oferece oportunidades únicas de voluntariado, especialmente nas áreas de conservação ambiental e proteção da vida marinha. Muitos programas se concentram na preservação de espécies ameaçadas, como as tartarugas marinhas Caretta caretta, que desovam nas praias da região. Voluntários ajudam a monitorar ninhos, proteger filhotes e educar turistas e moradores sobre práticas sustentáveis.')">
+                    <img src="img/07voou.avif" alt="voluntariado Kefalonia, Grécia">
+                    <p><a href="https://www.volunteerworld.com/pt/volunteer-abroad/grecia">voluntariado Kefalonia,
+                            Grécia</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/08voou.jpg', 'Na cidade e em suas áreas rurais, os programas de voluntariado são voltados principalmente para educação infantil, saúde comunitária, empoderamento feminino, apoio a pessoas com deficiência e desenvolvimento de infraestrutura básica. Muitos voluntários ajudam em escolas públicas com ensino de inglês, atividades recreativas e reforço escolar, além de contribuir com campanhas de saúde e higiene em comunidades afastadas.')">
+                    <img src="img/08voou.jpg" alt=" Voluntariado Huancayo, Peru">
+                    <p><a href="https://www.worldpackers.com/es/search/social_impact/south_america/peru/huancayo">
+                            Voluntariado Huancayo, Peru</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/10voou.jpg', 'A cidade oferece uma ampla gama de oportunidades de voluntariado: desde projetos de distribuição de alimentos para pessoas em situação de rua, apoio a imigrantes e refugiados, educação infantil em escolas públicas, até ações voltadas à preservação de espaços verdes como parques urbanos e hortas comunitárias. Há também organizações dedicadas a causas como saúde mental, justiça social e sustentabilidade.')">
+                    <img src="img/10voou.jpg" alt="Voluntariado New York, Estados Unidos">
+                    <p><a href="https://www.worldpackers.com/pt-BR/search/north_america/united_states/new_york">Voluntariado
+                            New York, Estados Unidos</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/09voou.jpg', 'A cidade oferece uma ampla gama de oportunidades de voluntariado, especialmente nas áreas de educação infantil, apoio a pessoas em situação de rua, ajuda a refugiados e migrantes, saúde comunitária, proteção animal e conservação ambiental. Também há espaço para ações culturais em museus, centros históricos e projetos voltados à juventude em comunidades vulneráveis.')">
+                    <img src="img/09voou.jpg" alt="Voluntariado na Cidade do México">
+                    <p><a href="https://www.volunteerworld.com/pt/volunteer-abroad/mexico">Voluntariado na Cidade do
+                            México</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/11voou.webp', 'Apesar de sua beleza bucólica, Bucine — como muitas pequenas cidades italianas — enfrenta desafios sociais que tornam o trabalho voluntário especialmente significativo. Os programas na região geralmente envolvem apoio a idosos, atividades intergeracionais, projetos educativos em escolas locais, preservação ambiental e agricultura sustentável em quintas comunitárias.')">
+                    <img src="img/11voou.webp" alt="Voluntariado em Bucine, Itália">
+                    <p><a href="https://www.worldpackers.com/pt-BR/search/social_impact/europe/italy/bucine">Voluntariado
+                            em Bucine, Itália</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/12voou.jpg', 'Os projetos de voluntariado na região geralmente envolvem apoio a idosos em zonas rurais isoladas, educação infantil, atividades culturais e patrimoniais, conservação da natureza e ajuda em quintas comunitárias ou centros ambientais. Em uma população envelhecida, o contato humano, o cuidado e a presença solidária tornam-se essenciais.')">
+                    <img src="img/12voou.jpg" alt=" Voluntariado  Cabeceiras de Basto, Portugal">
+                    <p><a href="https://cabeceirasdebasto.pt/juventude">Voluntariado Cabeceiras de Basto, Portugal</a>
+                    </p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/04voou.avif', 'Fazer voluntariado na Indonésia é se abrir para uma experiência enriquecedora em um dos países mais diversos e fascinantes do mundo. Com mais de 17 mil ilhas, culturas distintas e uma espiritualidade profunda, a Indonésia oferece oportunidades únicas de contribuição em projetos sociais, ambientais e educacionais — enquanto proporciona uma imersão cultural intensa e transformadora.')">
+                    <img src="img/04voou.avif" alt="Voluntariado na Indonésia">
+                    <p><a href="https://www.volunteerworld.com/pt/volunteer-abroad/indonesia">Voluntariado na
+                            Indonésia</a></p>
+                </div>
+                <div class="item-galeria"
+                    onclick="openModal('/public/img/13voou.webp', 'Voluntariar-se em Makuyu, uma pequena comunidade rural ao norte de Nairóbi, no Quênia, é uma experiência profundamente transformadora — tanto para quem recebe quanto para quem oferece ajuda. Em meio a paisagens de savanas, campos cultivados e um povo resiliente, os voluntários encontram uma oportunidade única de causar impacto real e viver o significado da solidariedade em sua forma mais pura.')">
+                    <img src="img/13voou.webp" alt="Voluntariado  Makuyu, Quênia
+">
+                    <p><a href="https://www.worldpackers.com/pt-BR/search/social_impact/africa/kenya/makuyu ">Voluntariado
+                            Makuyu, Quênia</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <p id="modalCaption"></p>
+        </div>
+    </div>
+
+
+    <!--FOOTER-->
+
+    <footer class="footer-conectacao">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Links Rápidos</h3>
+                <a href="../index.html">Início</a>
+                <a href="events.html">Eventos</a>
+                <a href="volunteers.html">Voluntários</a>
+                <a href="profile.html">Perfil</a>
+                <a href="reports.html">Relatório</a>
+            </div>
+            <div class="footer-box">
+                <h3>Siga-nos</h3>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.google.com.br/" target="_blank"><i class="fab fa-google"></i> Google</a>
+            </div>
+            <div class="footer-box">
+                <h3>ConectAção</h3>
+                <p>Projeto Interdisciplinar - ESBAM &copy; 2025</p>
+
+                <p> <strong>Alunos:</strong> Juliana Marques;
+                    Vinicius Vasconcelos;
+                    Filipe Wildes;
+                    Beatriz de Sousa;
+                    Kauan Moreira.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        //Formulario//
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("register-volunteer-form");
+            const volunteerListContainer = document.querySelector(".volunteer-list-container");
+
+            // Limpa o texto inicial
+            volunteerListContainer.innerHTML = "";
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // Pegar os dados do formulário
+                const name = document.getElementById("volunteer-name").value;
+                const email = document.getElementById("volunteer-email").value;
+                const phone = document.getElementById("volunteer-phone").value;
+                const availability = document.getElementById("volunteer-availability").value;
+
+                // Pegar os checkboxes marcados
+                const checkedBoxes = document.querySelectorAll('input[name="volunteer-interests"]:checked');
+                const interests = Array.from(checkedBoxes).map(cb => cb.parentElement.textContent.trim()).join(", ") || "Não informado";
+
+                // Criar card de voluntário
+                const volunteerCard = document.createElement("div");
+                volunteerCard.classList.add("volunteer-card");
+
+                volunteerCard.innerHTML = `
+      <div class="volunteer-content">
+        <h4>${name}</h4>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Telefone:</strong> ${phone}</p>
+        <p><strong>Áreas de Interesse:</strong> ${interests}</p>
+        <p><strong>Disponibilidade:</strong> ${availability || "Não informada"}</p>
+      </div>
+      <button class="delete-button" title="Remover voluntário">🗑️</button>
+    `;
+
+                // Botão de exclusão
+                const deleteBtn = volunteerCard.querySelector(".delete-button");
+                deleteBtn.addEventListener("click", () => {
+                    if (confirm("Deseja realmente remover este voluntário?")) {
+                        volunteerCard.remove();
+                    }
+                });
+
+                // Adiciona na lista
+                volunteerListContainer.appendChild(volunteerCard);
+
+                // Limpa o formulário
+                form.reset();
+            });
+        });
+    </script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/tema.js"></script>
+</body>
+
+</html>

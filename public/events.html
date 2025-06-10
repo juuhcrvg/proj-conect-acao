@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos - Conect Ação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/respoetema.css">
+    </head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../public/img/Picsart_25-05-20_22-23-51-427.png" alt="Logo da Plataforma" id="logo">
+                <h1>ConectAção</h1>
+            </div>
+<nav class="main-nav">
+    <ul>
+        <li><a href="../index.html" class="nav-link">Início</a></li>
+        <li><a href="events.html">Eventos</a></li>
+        <li><a href="volunteers.html" class="nav-link">Voluntários</a></li>
+        <li><a href="profile.html" class="nav-link">Perfil</a></li>
+        <li><a href="reports.html" class="nav-link">Relatórios</a></li>
+    </ul>
+</nav>
+
+                <!-- BOTÃO TEMA -->
+                <button id="toggle-theme" title="Alternar tema">
+                    🌙
+                </button>
+                <button class="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+        </div>
+    </header>
+    <!--JS DO MENU RESPONSIVO-->
+    <script>
+        const toggleMenu = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggleMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggleMenu.classList.toggle('hidden'); // <- nova linha
+        });
+    </script>
+
+
+
+    <main class="container">
+        <section id="create-event">
+            <h3>Cadastrar Novo Evento / Oportunidade</h3>
+            <form id="create-event-form">
+                <div>
+                    <label for="event-name">Nome do Evento:*</label>
+                    <input type="text" id="event-name" name="event-name" required>
+                </div>
+                <div>
+                    <label for="event-date">Data:*</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                </div>
+                <div>
+                    <label for="event-time">Horário:</label>
+                    <input type="time" id="event-time" name="event-time">
+                </div>
+                <div>
+                    <label for="event-location">Local:*</label>
+                    <input type="text" id="event-location" name="event-location" required>
+                </div>
+                <div>
+                    <label for="event-description">Descrição:*</label>
+                    <textarea id="event-description" name="event-description" required></textarea>
+                </div>
+                <div>
+                    <label for="event-volunteers-needed">Voluntários Necessários (Número):</label>
+                    <input type="number" id="event-volunteers-needed" name="event-volunteers-needed" min="0" value="0">
+                </div>
+                <button type="submit">Cadastrar Evento</button>
+            </form>
+        </section>
+
+        <section id="event-list">
+            <h3>Eventos:</h3>
+            <div class="event-list-container"></div>
+        </section>
+
+        <!-- NOVA SEÇÃO: EVENTOS  -->
+        <section id="artigos-recentes">
+
+            <h2>Eventos em Manaus</h2>
+
+
+            <div class="lista-artigos">
+                <div class="artigo">
+                    <img src="/public/img/Captura de tela 2025-05-24 201229.png" alt="Artigo 1" class="img-artigo">
+                    <div>
+                        <p class="titulo-artigo">TERRA CREW 2025 - EDIÇÃO LIMITADA 2.000 PESSOAS
+
+                        <p>Nosso evento será realizado no dia 15 de Junho na PISTA DE ARRANCADA - AMAZONAS DRAGWAY.</p>
+
+                        <p>Garanta já o seu ingresso e <strong><a
+                                    href="https://www.sympla.com.br/evento/terra-2025-manaus-limitado/2603457?referrer=br.search.yahoo.com">#VEMPRATERRA</a></strong>
+                        </p>
+
+                        </p>
+                        <p class="data-artigo">15 jun - 2025 • 02:00 > 15 jun - 2025 • 22:00</p>
+                    </div>
+                </div>
+
+                <div class="artigo">
+                    <img src="/public/img/Captura de tela 2025-05-24 202123.png" alt="Artigo 2" class="img-artigo">
+                    <div>
+                        <p class="titulo-artigo">Tributo aos Los Hermanos com Camelos Barbados!
+                        </p>
+                        <p>Atenção, amantes da boa música e das emoções à flor da pele! No dia 07 de junho, <br>
+                            preparem os
+                            corações e as vozes, porque o Porão do Alemão se transformará em um verdadeiro templo da
+                            MPB!</p>
+                        <p>Garanta já o seu ingresso e <strong><a
+                                    href=https://www.sympla.com.br/evento/tributo-a-los-hermanos-com-camelos-barbados/2958283>Porão
+                                    do Alemão</a></strong>
+                        </p>
+                        </p>
+                        <p class="data-artigo">07 jun - 2025 • 19:00 > 08 jun - 2025 • 06:00</p>
+                    </div>
+                </div>
+                <div class="lista-artigos">
+                    <div class="artigo">
+                        <img src="/public/img/Captura de tela 2025-05-24 203013.png" alt="Artigo 1" class="img-artigo">
+                        <div>
+                            <p class="titulo-artigo">"FEVER CLUB com LORENA SIMPSON"</p>
+                            <p>A Fervo te convida para uma noite cheia de hinos atemporais que fizeram história nas
+                                boates! Estamos de volta com o "Fever Club".</p>
+
+                            <p>Garanta já o seu ingresso e <strong><a
+                                        href="https://www.sympla.com.br/evento/fever-club-com-lorena-simpson-24maio/2954241">Augusta
+                                        Haus</a></strong>
+                            </p>
+
+                            </p>
+                            <p class="data-artigo">24 mai - 2025 • 22:00 > 25 mai - 2025 • 05:00</p>
+                        </div>
+                    </div>
+                    <div class="lista-artigos">
+                        <div class="artigo">
+                            <img src="/public/img/Captura de tela 2025-05-24 203732.png" alt="Artigo 1"
+                                class="img-artigo">
+                            <div>
+                                <p class="titulo-artigo">YOU CAN DANCE – Nos embalos de sábado à noite onde os anos 80
+                                    brilham! A sua festa!
+
+                                <p>Pela Primeira vez em Manaus, para quem precisava de uns Embalos no sábado a noite,
+                                    chegou a You Can Dance! <br /> Prepare a polaina, ajeite o topete e venha curtir uma
+                                    noite onde a pista vira um verdadeiro videoclipe dos anos 80. <br> E se tem uma
+                                    coisa que os anos 80 ensinaram, é que dançar nunca é demais! </p>
+
+                                <p>Garanta já o seu ingresso e <strong><a
+                                            href="https://www.sympla.com.br/evento/you-can-dance-edicao-manaus/2919855">Red
+                                            Dog Pub </a></strong>
+                                </p>
+
+                                </p>
+                                <p class="data-artigo">24 mai - 2025 • 22:00 > 25 mai - 2025 • 03:00</p>
+                            </div>
+                        </div>
+                    </div>
+        </section>
+    </main>
+
+
+
+    <!--Card do eventos-->
+
+    <h1 class="titulo-secao"></h1>
+    <h2>Avaliação</h2>
+    <p class="subtitulo-secao"></p>
+
+    <div class="swiper meus-slider-depoimentos">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="card-depoimento">
+                    <div class="estrelas">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="quote">"O ConectAção me ajudou a encontrar eventos incríveis na minha cidade. A interface
+                        é simples, e eu consigo ver tudo o que participei. Muito útil para quem gosta de estar sempre
+                        ativo na comunidade!"</p>
+                    <div class="autor-info">
+                        <div class="avatar">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="texto">
+                            <p class="nome">Vinicius Vasconcelos</p>
+                            <p class="data">Cliente desde 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-depoimento">
+                    <div class="estrelas">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">☆</span>
+                    </div>
+                    <p class="quote">"Participei como voluntário em uma ação social através do ConectAção e foi uma
+                        experiência transformadora. A plataforma facilita o contato com organizadores e ainda mantém um
+                        histórico das atividades. Recomendo!"</p>
+                    <div class="autor-info">
+                        <div class="avatar">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="texto">
+                            <p class="nome">Kauan Moreira</p>
+                            <p class="data">Cliente desde 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-depoimento">
+                    <div class="estrelas">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span>
+                    </div>
+                    <p class="quote">"Divulgar nossos eventos no ConectAção aumentou a participação da comunidade. A
+                        ferramenta é prática e nos conecta com pessoas engajadas e dispostas a colaborar."</p>
+                    <div class="autor-info">
+                        <div class="avatar">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="texto">
+                            <p class="nome">Beatriz de Sousa</p>
+                            <p class="data">Cliente desde 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="card-depoimento">
+                    <div class="estrelas">
+                        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">☆</span>
+                    </div>
+                    <p class="quote">"Uso o ConectAção há alguns meses e adoro como tudo é organizado. Posso acompanhar
+                        meus eventos, receber notificações e descobrir novas formas de ajudar. Excelente iniciativa!"
+                    </p>
+                    <div class="autor-info">
+                        <div class="avatar">
+                            <div class="placeholder-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="texto">
+                            <p class="nome"> Filipe Wildes</p>
+                            <p class="data">Cliente desde 202</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+    <script>
+        //Card do Eventos 
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const swiperDepoimentos = new Swiper('.meus-slider-depoimentos', {
+                // Parâmetros Opcionais
+                loop: true, // Permite que o slider volte ao início após o último slide
+
+                // Quantidade de slides visíveis - 'auto' usa a largura do CSS do card
+                // Ou defina um número fixo e ajuste com breakpoints
+                slidesPerView: 1, // Padrão para mobile
+                spaceBetween: 20, // Espaço entre os slides
+
+                pagination: {
+                    el: '.meus-slider-depoimentos .swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.meus-slider-depoimentos .swiper-button-next',
+                    prevEl: '.meus-slider-depoimentos .swiper-button-prev',
+                },
+
+                // Breakpoints para responsividade (quantos slides mostrar em telas diferentes)
+                breakpoints: {
+                    // quando a largura da janela é >= 640px
+                    640: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    // quando a largura da janela é >= 768px
+                    768: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    // quando a largura da janela é >= 1024px
+                    1024: {
+                        slidesPerView: 3, // Mostra 3 slides em telas maiores
+                        spaceBetween: 30
+                    }
+                }
+            });
+        });
+
+    </script>
+
+    <!-- Mapa -->
+    <h2>Mapa</h2>
+    <div class="mapa-container">
+        <div id="mapa"></div>
+    </div>
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <script>
+        // Inicializa o mapa
+        const mapa = L.map('mapa').setView([-3.119, -60.021], 13);
+
+        // Camada base
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(mapa);
+
+        // ⚠️ Ação fictícia só para mostrar o botão funcionando no protótipo
+        function localizarUsuarioFake() {
+            // Posição simulada
+            const lat = -3.118;
+            const lon = -60.015;
+
+            const marcador = L.marker([lat, lon]).addTo(mapa);
+            marcador.bindPopup("Localização simulada!").openPopup();
+            mapa.setView([lat, lon], 15);
+        }
+
+        // Botão com símbolo de localização
+        const botaoLocalizacao = L.control({ position: 'topright' });
+        botaoLocalizacao.onAdd = function () {
+            const div = L.DomUtil.create('div', 'leaflet-control-locate');
+            div.innerHTML = '📍';
+            div.title = "Minha Localização (Protótipo)";
+            div.onclick = localizarUsuarioFake;
+            return div;
+        };
+        botaoLocalizacao.addTo(mapa);
+    </script>
+
+
+    <!--FOOTER-->
+
+    <footer class="footer-conectacao">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Links Rápidos</h3>
+                <a href="../index.html">Início</a>
+                <a href="/public/events.html">Eventos</a>
+                <a href="/public/volunteers.html">Voluntários</a>
+                <a href="/public/profile.html">Perfil</a>
+                <a href="/public/reports.html">Relatório</a>
+            </div>
+            <div class="footer-box">
+                <h3>Siga-nos</h3>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.google.com.br/" target="_blank"><i class="fab fa-google"></i> Google</a>
+            </div>
+            <div class="footer-box">
+                <h3>ConectAção</h3>
+                <p>Projeto Interdisciplinar - ESBAM &copy; 2025</p>
+
+                <p> <strong>Alunos:</strong> Juliana Marques;
+                    Vinicius Vasconcelos;
+                    Filipe Wildes;
+                    Beatriz de Sousa;
+                    Kauan Moreira.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("create-event-form");
+            const eventListContainer = document.querySelector(".event-list-container");
+
+            // Limpa mensagem inicial
+            eventListContainer.innerHTML = "";
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                // Pegar valores do formulário
+                const name = document.getElementById("event-name").value;
+                const date = document.getElementById("event-date").value;
+                const time = document.getElementById("event-time").value || "Horário não informado";
+                const location = document.getElementById("event-location").value;
+                const description = document.getElementById("event-description").value;
+                const volunteers = document.getElementById("event-volunteers-needed").value || "0";
+
+                // Criar card de evento
+                const eventCard = document.createElement("div");
+                eventCard.classList.add("event-card");
+
+                eventCard.innerHTML = `
+      <div class="event-content">
+        <h4>${name}</h4>
+        <p><strong>Data:</strong> ${date}</p>
+        <p><strong>Horário:</strong> ${time}</p>
+        <p><strong>Local:</strong> ${location}</p>
+        <p><strong>Descrição:</strong> ${description}</p>
+        <p><strong>Voluntários necessários:</strong> ${volunteers}</p>
+      </div>
+      <button class="delete-button" title="Excluir evento">🗑️</button>
+    `;
+
+                // Evento de clique na lixeira
+                const deleteBtn = eventCard.querySelector(".delete-button");
+                deleteBtn.addEventListener("click", () => {
+                    if (confirm("Tem certeza que deseja excluir este evento?")) {
+                        eventCard.remove();
+                    }
+                });
+
+                // Adicionar na lista
+                eventListContainer.appendChild(eventCard);
+
+                // Limpar o formulário
+                form.reset();
+            });
+        });
+    </script>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/tema.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</body>
+
+</html>

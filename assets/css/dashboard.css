@@ -1,0 +1,1332 @@
+:root { 
+    --bg-color-light: #ffffff;
+    --text-color-light: #000000;
+    --bg-color-dark: #121212;
+    --text-color-dark: #ffffff; 
+    --text-color-dark-strong: #ffffff; 
+    --text-color-dark-subtle: #bbbbbb;
+
+    --accent-color: #e42c07;
+    --button-bg: #f95725;
+    --button-hover: #055fa8;
+
+    /* Cores Semânticas (Modo Claro por Padrão) */
+    --cor-fundo-principal: var(--bg-color-light);
+    --cor-texto-principal: var(--text-color-light);
+    --cor-texto-paragrafo: #333333;
+    --cor-texto-titulos: #35424a;
+    --cor-texto-links: #007bff; 
+    --cor-texto-links-especificos: #912009;
+    --cor-texto-sutil: #666666;
+    --cor-texto-realce-escuro: #000000;
+    --cor-fundo-secao: #ffffff;
+    --cor-fundo-secao-alternativa: #f9f9f9;
+    --cor-fundo-card: #f0f0f0;
+    --cor-fundo-card-destaque:#eed6c9;
+    --cor-fundo-card-evento: #f3656537;
+    --cor-fundo-card-evento-laranja: #eed6c9;
+    --cor-fundo-input: #fdfdfd;
+    --cor-texto-input: #333333;
+
+    --cor-borda-padrao: #dddddd;
+    --cor-borda-forte: #cccccc;
+    --cor-borda-card: #eeeeee;
+    --cor-borda-destaque-lateral: var(--accent-color);
+
+    --cor-icone: #6c757d;
+    --cor-modal-fechar: #aaaaaa;
+    --cor-modal-fechar-hover: #000000;
+    --cor-frase-carrossel-texto: rgb(9, 9, 9);
+    --cor-frase-carrossel-fundo: rgba(251, 250, 250, 0.737);
+
+    /* Cores específicas de componentes */
+    --header-bg: radial-gradient(circle, rgba(22, 140, 140, 1) 0%, rgba(64, 168, 168, 1) 50%, rgba(7, 240, 213, 1) 100%);
+    --header-text: #000000;
+    --header-border: #e42c07;
+
+    --footer-bg: var(--header-bg);
+    --footer-text: #ffffff;
+    --footer-link-text: #e0f0ff;
+    --footer-link-hover-text: #cce4ff;
+
+    --feedback-bg: #f87d36f8;
+    --feedback-titulo-text: #ffffff;
+    --feedback-label-text: #0d0d0d;
+    --feedback-btn-bg: #dd1c12;
+    --feedback-btn-text: #fff;
+    --feedback-btn-hover-bg: #0056b3;
+
+    --conteudo-lateral-bg: #0a2a4d;
+    --conteudo-lateral-text: #ffffff;
+    --conteudo-lateral-input-border: #4b6c8c;
+    --conteudo-lateral-btn-oportunidades-bg: #007bff;
+    --conteudo-lateral-btn-inscrever-bg: #00c1d4;
+}
+
+/* Acrescentado: suporte ao modo escuro */
+body.dark-mode {
+    --cor-fundo-principal: var(--bg-color-dark);
+    --cor-texto-principal: var(--text-color-dark);
+    --cor-texto-paragrafo: var(--text-color-dark-subtle);
+    --cor-texto-titulos: var(--text-color-dark-strong);
+    --cor-texto-links: #66b2ff;
+    --cor-texto-links-especificos: #ff7a57;
+    --cor-texto-sutil: #aaaaaa;
+    --cor-texto-realce-escuro: #ffffff;
+    --cor-fundo-secao: #1e1e1e;
+    --cor-fundo-secao-alternativa: #1a1a1a;
+    --cor-fundo-card: #2a2a2a;
+    --cor-fundo-card-destaque: #3a2c2c;
+    --cor-fundo-card-evento: #422d2d75;
+    --cor-fundo-card-evento-laranja: #3f2a22;
+    --cor-fundo-input: #2e2e2e;
+    --cor-texto-input: #ffffff;
+
+    --cor-borda-padrao: #444444;
+    --cor-borda-forte: #555555;
+    --cor-borda-card: #3a3a3a;
+
+    --cor-icone: #dddddd;
+    --cor-modal-fechar: #ffffff;
+    --cor-modal-fechar-hover: #cccccc;
+    --cor-frase-carrossel-texto: #ffffff;
+    --cor-frase-carrossel-fundo: rgba(30, 30, 30, 0.85);
+
+    --header-text: #ffffff;
+    --footer-text: #dddddd;
+    --footer-link-text: #aad4ff;
+    --footer-link-hover-text: #ffffff;
+
+    --feedback-label-text: #ffffff;
+}
+
+/* === ESTILOS GLOBAIS === */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/*ICONE DIA E NOITE*/
+#toggle-theme {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--cor-texto-principal);
+}
+
+a {
+    color: var(--cor-texto-links);
+}
+
+body.dark-mode a {
+    color: var(--cor-texto-links);
+}
+
+h2 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: rgb(255, 21, 0);
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+
+p {
+    color: var(--cor-texto-paragrafo);
+}
+
+body.dark-mode .container,
+body.dark-mode .nav-link,
+body.dark-mode p,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode span,
+body.dark-mode label,
+body.dark-mode li {
+    color: inherit;
+}
+
+/* ==== CONTAINER PRINCIPAL === */
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* ==== CABEÇALHO ==== */
+header {
+    background: var(--header-bg);
+    color: var(--header-text);
+    padding-top: 10px;
+    min-height: 40px;
+    border-bottom: var(--header-border) 3px solid;
+    font-size: 120%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--header-text);
+}
+
+header nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+header nav ul li {
+    margin: 0;
+}
+
+header #logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: var(--header-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight: 400;
+    padding-bottom: 5px;
+    border-radius: 2%;
+}
+
+header nav ul li a:hover {
+    background-color: rgba(241, 115, 11, 0.852);
+    color: #030303;
+}
+
+body.dark-mode header nav ul li a:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color-dark-strong);
+}
+
+
+/* === FORMULÁRIO DE EVENTO === */
+
+main.container {
+    width: 90%;
+    max-width: 600px; 
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* == Evento - Voluntário == */
+#create-event-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--cor-texto-principal);
+    display: block;
+    font-size: 1rem;
+}
+
+#create-event-form input[type="text"],
+#create-event-form input[type="date"],
+#create-event-form input[type="time"],
+#create-event-form input[type="number"],
+#create-event-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto-input);
+    font-size: 1rem;
+}
+
+#create-event-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+#create-event-form button[type="submit"] {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+#create-event-form button[type="submit"]:hover {
+    background-color: var(--button-hover);
+}
+
+#create-event h3 {
+    font-size: 1.5rem;
+    color: var(--cor-texto-principal);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+
+
+/* --- CARROSEL : INTERFACE DO DASBOARD--- */
+.frase-carrossel {
+    font-size: 2rem;
+    color: var(--cor-frase-carrossel-texto);
+    background-color: var(--cor-frase-carrossel-fundo);
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.carousel-inner img {
+    max-height: 700px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* --- FRASE DENTRO DO CARROSEL: INTERFACE DO DASBOARD--- */
+.hero {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Texto sobre imagem escura */
+    overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.banner-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-banner {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    color: white; /* Garante cor no hero */
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    color: white; /* Garante cor no hero */
+}
+
+#hero {
+    background: var(--cor-fundo-secao);
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--cor-texto-titulos);
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: var(--cor-texto-paragrafo);
+}
+
+
+
+/* === SLIDER DEPOIMENTOS : Interface EVENTO === */
+.titulo-secao { 
+    font-size: 2em;
+    color: var(--cor-texto-titulos);
+    margin-bottom: 10px;
+    text-align: center;
+    position: relative;
+
+}
+
+.subtitulo-secao { 
+    font-size: 1.1em;
+    color: var(--cor-texto-sutil);
+    margin-bottom: 30px;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === SLIDER DEPOIMENTOS : Interface EVENTO === */
+.meus-slider-depoimentos.swiper {
+    width: 90%;
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 10px 0;
+    position: relative;
+}
+
+.meus-slider-depoimentos .swiper-wrapper {
+    padding-bottom: 50px;
+}
+
+.meus-slider-depoimentos .swiper-slide {
+    width: auto;
+    box-sizing: border-box;
+}
+
+.card-depoimento { 
+    background-color: var(--cor-fundo-card-destaque);
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 320px;
+    margin: 0 auto;
+    border: 1px solid var(--cor-borda-card); 
+}
+body.dark-mode .card-depoimento {
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05); 
+}
+.card-depoimento .quote {
+    font-style: italic;
+    color: var(--cor-texto-paragrafo); 
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+.card-depoimento .autor-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    border-top: 1px solid var(--cor-borda-forte);
+    padding-top: 15px;
+}
+.card-depoimento .autor-info .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #e0e0e0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 12px;
+}
+body.dark-mode .card-depoimento .autor-info .avatar {
+    background-color: #555555;
+}
+
+.card-depoimento .autor-info .avatar svg,
+.card-depoimento .autor-info .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-depoimento .autor-info .avatar .placeholder-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--cor-texto-principal);
+}
+
+.card-depoimento .autor-info .texto .nome {
+    font-weight: bold;
+    color: var(--cor-texto-titulos); /* Ajustado */
+    margin: 0 0 3px 0;
+    font-size: 0.9em;
+}
+
+.card-depoimento .autor-info .texto .data {
+    font-size: 0.8em;
+    color: black; 
+    margin: 0;
+}
+
+.card-depoimento .estrelas {
+    color: #ffc107; 
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+.card-depoimento .estrelas .star {
+    margin-right: 2px;
+}
+
+/* === SEÇÕES LADO A LADO (voluntariado, eventos, relatórios, depoimentos) === */
+#register-volunteer,
+#volunteer-list,
+#create-event,
+#generate-report,
+#testimonials-reports {
+    flex: 1;
+    min-width: 300px;
+}
+/* === RELATÓRIOS  === */
+.card-relatorio {
+    background-color: #dd1c12;
+    color: #0d0d0d;        
+    padding: 20px;
+    border-left: 6px solid #000000; 
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card-relatorio h5 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+     background-color: #dd1c12;
+}
+
+.container-texto-relatorios-colunas {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap; 
+}
+
+.coluna-texto-relatorios {
+    flex: 1;
+    min-width: 280px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cor-texto-principal);
+}
+
+
+/* === CARDS (Evento, Voluntário) === */
+.event-list-container,
+.volunteer-list-container {
+       flex: 1;
+    min-width: 300px;
+
+}
+
+.event-card {
+            background: #f84002db;
+       
+            border: 1px solid #f70202;
+        
+            padding: 20px 25px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-family: 'Times New Roman', Times, serif;
+}
+.event-card h4 {
+            margin: 0 0 10px 0;
+            color: #040607;
+            font-size: 1.2rem;
+            font-weight: 700;
+}
+
+.event-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: #010101;
+            line-height: 1.3;
+}
+
+.details-link {
+            margin-top: 12px;
+            align-self: flex-start;
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #fdfcfbfc;
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.3s ease;
+}
+
+.details-link:hover {
+            background-color: #ba2207;
+
+}
+.event-card h4,
+.volunteer-card h4 {
+    margin-top: 0;
+    color: var(--text-color-dark-strong); 
+}
+
+.event-card p,
+.volunteer-card p {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    color:  black;
+}
+body.dark-mode .event-card p, body.dark-mode .volunteer-card p {
+     color:  black;
+}
+
+.event-card .details-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* === CADASTRO DE VOLUNTÁRRIO : Interface VOLUNTÁRIO === */
+form {
+      flex: 1;
+    min-width: 300px;
+    
+}
+
+form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--cor-texto-principal);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="date"],
+form input[type="time"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(21, 20, 20);
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto-input);
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+    
+}
+
+form button[type="submit"] {
+    background-color: var(--button-bg);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    align-self: flex-start;
+}
+
+form button[type="submit"]:hover {
+    background-color: var(--button-hover);
+}
+
+.volunteer-card {
+  background-color: var(--button-bg); /* ou uma cor da sua identidade visual */
+  
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* === CARDS DE DEPOIMENTO : INTERFACE RELATÓRIO === */
+.testimonial-card { 
+    background-color: var(--cor-fundo-card);
+    border: 1px solid var(--cor-borda-card);
+    border-left: 5px solid var(--cor-borda-destaque-lateral);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+body.dark-mode .testimonial-card {
+     box-shadow: 0 2px 5px rgba(255,255,255,0.08);
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: var(--cor-texto-paragrafo);
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.05em;
+    line-height: 1.5;
+}
+
+.testimonial-card .quote::before {
+    content: '“';
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--accent-color);
+    position: absolute;
+    left: 0px;
+    top: -10px;
+    opacity: 0.8;
+}
+
+.testimonial-card .author {
+    text-align: right;
+    font-weight: bold;
+    color: var(--cor-texto-titulos);
+    font-size: 0.95em;
+}
+
+/*PERFIL - DEIXA O TEXTO ALINHADO : INTERFACE PERFIL*/
+#user-profile p {
+  text-align: justify;
+  line-height: 1.6; 
+  margin-bottom: 1rem; 
+}
+
+
+
+/* === INTERFACE DE EVENTOS (Cards gerados por JS) === */
+.event-card.list-item { /* Card de evento em lista */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--cor-fundo-secao-alternativa);
+     padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative;
+}
+body.dark-mode .event-card.list-item {
+    border-left-color: #00efd2; /* Verde mais claro no modo escuro */
+    box-shadow: 0 2px 5px rgba(255,255,255,0.05);
+}
+
+.event-content {
+    flex: 1;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--cor-texto-sutil);
+    margin-left: 10px;
+    transition: transform 0.2s;
+}
+.delete-button:hover {
+    transform: scale(1.2);
+    color: var(--accent-color);
+}
+
+/* === GALERIA DE CARDS "VOLUNTÁRIOS PELO MUNDO" === */
+#voluntarios-pelo-mundo {
+    margin-top: 80px;
+    padding-bottom: 60px;
+}
+
+#voluntarios-pelo-mundo h2 {
+    font-size: 1.8em;
+ margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px; 
+    text-align: center; 
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 1275px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-galeria {
+    width: auto; /* Ocupa o espaço da coluna do grid */
+border: 1px solid var(--cor-borda-card);
+    border-radius: 8px;
+ overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    /* margin-top: 0; Removido, gap do grid cuida */
+}
+body.dark-mode .item-galeria {
+    box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+}
+
+.item-galeria img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.item-galeria p {
+    margin: 10px;
+    font-size: 14px;
+    color: var(--cor-texto-paragrafo);
+}
+
+
+
+/* === MODAL VOLUNTÁRIO PELO MUNDO , INTERFACE VOLUNTÁRIO === */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    justify-content: center;
+    align-items: center;
+}
+body.dark-mode .modal {
+    background-color: rgba(0, 0, 0, 0.9); 
+}
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: var(--cor-fundo-secao); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 8px;
+}
+
+.modal-content p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: var(--cor-texto-paragrafo);
+}
+
+.close { /* Botão de fechar o modal */
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover,
+.close:focus {
+
+    text-decoration: none;
+}
+
+
+
+/* === EVENTOS EM MANAUS 
+INTERFACE DE EVENTOS === */
+
+
+.lista-artigos {
+/* Estilos para a seção de artigos recentes */
+#artigos-recentes {
+    padding: 20px; /* Um pouco de espaço nas laterais da seção */
+    /* background-color: #f9f9f9; Opcional: uma cor de fundo suave para a seção */
+}
+
+#artigos-recentes h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333; /* Ou a cor do seu tema */
+}
+
+.lista-artigos {
+    display: grid;
+    /* Cria colunas que se ajustam: cada uma terá no mínimo 280px 
+       e no máximo 1fr (ocupando o espaço disponível igualmente) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px; /* Espaço entre os cards */
+}
+
+.artigo {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden; /* Para que a imagem não ultrapasse as bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; /* Faz com que o conteúdo dentro do card empilhe verticalmente */
+}
+
+.img-artigo {
+    width: 100%;      /* Imagem ocupa toda a largura do card */
+    height: 200px;    /* Altura fixa para a área da imagem (ajuste conforme necessário) */
+    object-fit: cover; /* Faz a imagem cobrir a área sem distorcer, cortando o excesso */
+}
+
+.conteudo-artigo {
+    padding: 15px;
+    flex-grow: 1; /* Faz esta div ocupar o espaço restante no card, útil se os cards tiverem alturas diferentes */
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo-artigo .titulo-artigo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.conteudo-artigo p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.conteudo-artigo .data-artigo {
+    font-size: 0.8em;
+    color: #777;
+    margin-top: auto; /* Empurra a data para o final do card se o conteúdo tiver alturas variáveis */
+}
+
+.conteudo-artigo a {
+    color: #ff4b2b; /* Cor do seu tema para links */
+    text-decoration: none;
+}
+
+.conteudo-artigo a:hover {
+    text-decoration: underline;
+}
+
+/*
+.mapa-container {
+    display: flex;
+    justify-content: center;
+}
+
+#mapa {
+    height: 400px;
+    width: 80%;
+    margin-bottom: 50px;
+    border-radius: 8px; /* Adicionado */
+}
+ /*FEEBBACK INTERFACE RELATORIO*/
+.feedback input[type="text"],
+.feedback input[type="email"],
+.feedback textarea,
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 10x;
+    border: 2px solid var(--cor-texto-links);
+    border-radius: 5px;
+    font-family: inherit;
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto-input);
+}
+
+
+
+/* === CONTEÚDO LATERAL (Azul - Junte-se à Rede INTERFACE RELATÓRIO) === */
+.conteudo-lateral {
+    flex: 1 1 400px;
+    min-width: 300px;
+    max-width: 100%;
+    background-color: var(--conteudo-lateral-bg);
+    color: var(--conteudo-lateral-text);
+    padding: 30px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.junte-se-container {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.junte-se-info {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 280px;
+}
+
+.junte-se-info h2 {
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    line-height: 1.3;
+    color: var(--conteudo-lateral-text);
+}
+
+.stats-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: left;
+}
+
+.stat-number {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 1;
+    color: var(--conteudo-lateral-text);
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-top: 5px;
+    color: var(--conteudo-lateral-text);
+    opacity: 0.8;
+}
+
+.btn {
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    display: inline-block;
+}
+
+.btn-oportunidades {
+    background-color: var(--conteudo-lateral-btn-oportunidades-bg);
+    color: #ffffff;
+    max-width: 300px;
+}
+
+.btn-oportunidades:hover {
+    background-color: #0056b3;
+}
+
+.newsletter-coluna {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    min-width: 280px;
+}
+
+.newsletter-coluna h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--conteudo-lateral-text);
+}
+
+.newsletter-coluna p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+.newsletter-form input[type="text"],
+.newsletter-form input[type="email"] {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid var(--conteudo-lateral-input-border);
+    background-color: #fff; /* Fundo branco para inputs */
+    color: #333; /* Texto escuro */
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.btn-inscrever {
+    background-color: var(--conteudo-lateral-btn-inscrever-bg);
+    color: #ffffff;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.btn-inscrever:hover {
+    background-color: #009aaf;
+}
+
+.btn-whatsapp {
+    background-color: transparent;
+    color: #ffffff;
+    width: 100%;
+    border: 1px solid #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.btn-whatsapp:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* === FEEDBACK (Formulário Laranja) === */
+.feedback {
+    flex: 1 1 400px;
+    min-width: 300px;
+    max-width: 100%;
+    margin: 0;
+    background-color: var(--feedback-bg);
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--feedback-titulo-text);
+}
+
+.feedback h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--feedback-label-text);
+    font-weight: bold;
+}
+
+.feedback input[type="text"],
+.feedback input[type="email"],
+.feedback textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    border: 2px solid var(--cor-texto-links);
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: inherit;
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto-input);
+    resize: vertical;
+}
+
+body.dark-mode .feedback input[type="text"],
+body.dark-mode .feedback input[type="email"],
+body.dark-mode .feedback textarea {
+    border-color: var(--accent-color);
+}
+
+.feedback textarea {
+    min-height: 100px;
+}
+
+.feedback button[type="submit"] {
+    background-color: var(--feedback-btn-bg);
+    color: var(--feedback-btn-text);
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.feedback button[type="submit"]:hover {
+    background-color: var(--feedback-btn-hover-bg);
+}
+
+.feedback-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--feedback-label-text);
+}
+
+/* === Container principal com duas colunas === */
+.pagina-com-duas-colunas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  padding: 10px;
+  background: #f9f9f9; /* Remova ou ajuste conforme sua preferência */
+}
+
+/* === Media Query para mobile e tablet === */
+@media (max-width: 768px) {
+  .pagina-com-duas-colunas {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .feedback,
+  .conteudo-lateral {
+    flex: 1 1 100%;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .junte-se-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .junte-se-info,
+  .newsletter-coluna {
+    min-width: 100%;
+  }
+}
+
+/* === RODAPÉ === */
+.footer-conectacao {
+    background: var(--footer-bg);
+    padding: 15px 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.footer-box {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: black; /* Garante cor */
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+}
+
+.footer-box a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 8px 0;
+  
+}
+
+
+
+

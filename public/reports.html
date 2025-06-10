@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios - Conect Ação</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link rel="stylesheet" href="../assets/css/respoetema.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <img src="../public/img/Picsart_25-05-20_22-23-51-427.png" alt="Logo da Plataforma" id="logo">
+                <h1>ConectAção</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../index.html" class="nav-link">Início</a></li>
+                    <li><a href="events.html">Eventos</a></li>
+                    <li><a href="volunteers.html" class="nav-link">Voluntários</a></li>
+                    <li><a href="profile.html" class="nav-link">Perfil</a></li>
+                    <li><a href="reports.html" class="nav-link">Relatórios</a></li>
+                </ul>
+            </nav>
+
+            <!-- BOTÃO TEMA -->
+            <button id="toggle-theme" title="Alternar tema">
+                🌙
+            </button>
+            <button class="menu-toggle" aria-label="Abrir menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </header>
+    <!--JS DO MENU RESPONSIVO-->
+    <script>
+        const toggleMenu = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('.main-nav');
+
+        toggleMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            toggleMenu.classList.toggle('hidden'); // <- nova linha
+        });
+    </script>
+
+
+
+    <main class="container">
+        <section id="impact-reports">
+            <h3>Relatórios </h3>
+            <div class="container-texto-relatorios-colunas">
+                <div class="coluna-texto-relatorios">
+                    <p>A <STRong>ConectAção é uma proposta de plataforma digital para a gestão de voluntários e eventos
+                            sociais</STRong>.
+                        <br> O objetivo é facilitar a conexão entre pessoas dispostas a contribuir com causas sociais e
+                        organizações que promovem ações comunitárias.
+                    </p>
+                    <P>Embora o site ainda não esteja em funcionamento real, este protótipo foi desenvolvido como parte
+                        de um projeto acadêmico, com foco em simular uma futura plataforma de impacto social. A ideia é
+                        permitir que os usuários se cadastrem, recebam notificações sobre eventos e possam interagir com
+                        oportunidades de voluntariado em suas cidades.</P>
+                    <p>A equipe da ConectAção reforça seu compromisso com a transparência e a melhoria contínua. Estamos
+                        trabalhando para implementar novas funcionalidades no site, como integração com redes sociais,
+                        painel de oportunidades por região e notificações personalizadas por e-mail e WhatsApp.</p>
+                </div>
+                <div class="coluna-texto-relatorios">
+                    <p>Cada nova inscrição representa uma semente plantada na construção de uma sociedade mais
+                        solidária. Os participantes foram recepcionados com a seguinte mensagem:</p>
+                    <p><em>"Logo, logo vamos estar melhorando o site e, futuramente, quem sabe, tornando esse projeto
+                            realidade. Sua participação nos inspira!"</em></p>
+
+                    <p><strong>Agradecemos a todos que acreditam no poder da ação coletiva. Seguimos conectando boas
+                            ações. 🌍💙</strong></p>
+                    <p>Este é apenas o início de uma ideia que pode crescer. A equipe responsável pelo projeto espera,
+                        futuramente, transformá-la em uma ferramenta funcional que ajude a conectar boas ações em todo o
+                        Brasil.</p>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <section id="generate-report">
+            <h3>Gerar Novo Relatório</h3>
+            <form id="generate-report-form">
+                <div>
+                    <label for="report-type">Tipo de Relatório:</label>
+                    <select id="report-type" name="report-type">
+                        <option value="volunteer_participation">Participação de Voluntários</option>
+                        <option value="event_summary">Resumo de Eventos</option>
+                        <option value="community_impact">Impacto na Comunidade (Simulado)</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="report-period-start">Período - Início:</label>
+                    <input type="date" id="report-period-start" name="report-period-start">
+                </div>
+                <div>
+                    <label for="report-period-end">Período - Fim:</label>
+                    <input type="date" id="report-period-end" name="report-period-end">
+                </div>
+                <button type="submit">Gerar Relatório</button>
+            </form>
+            <div id="report-output" style="margin-top: 20px;">
+                <h4>Relatório Gerado:</h4>
+            </div>
+        </section>
+
+        <!--o que dizem nosso Voluntários-->
+        <section id="testimonials-reports">
+            <h3>O que dizem Nossos Voluntários</h3>
+
+            <div class="testimonial-card">
+                <p class="quote">"O voluntariado me mostrou que não é sobre grandes feitos, mas sobre estar presente com
+                    o coração aberto."</p>
+                <p class="author">- Marina Oliveira, voluntária</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Descobri que somos todos necessários — e que cada pequena ajuda constrói algo muito
+                    maior."</p>
+                <p class="author">- Carlos M.</p>
+            </div>
+            <div class="testimonial-card">
+                <p class="quote">"Cheguei com vontade de mudar o mundo, e voltei transformado por ele."</p>
+                <p class="author">- Equipe Voluntária Alpha</p>
+            </div>
+        </section>
+    </main>
+
+    <div class="pagina-com-duas-colunas">
+
+        <section class="feedback" id="contato">
+            <h2>Deixe Seu Feedback</h2>
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" placeholder="Escreva sua mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="feedbackMessage" class="feedback-message"></div>
+        </section>
+
+        <div class="conteudo-lateral">
+            <div class="junte-se-container">
+                <div class="junte-se-info">
+                    <h2>Junte-se a nossa rede</h2>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number" id="voluntariosCount">311.858</span>
+                            <span class="stat-label">VOLUNTÁRIOS</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="ongsCount">4.972</span>
+                            <span class="stat-label">ONGS CADASTRADAS</span>
+                        </div>
+                    </div>
+                    <a href="/public/volunteers.html" class="btn btn-oportunidades">Conheça oportunidades voluntárias
+                        &rarr;</a>
+                </div>
+
+                <div class="newsletter-coluna">
+                    <h3>ConectAção</h3>
+                    <p>Quer receber notificações para ser voluntário no seu email?</p>
+                    <form class="newsletter-form" id="formNewsletter">
+                        <input type="text" id="nome" placeholder="Nome completo" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <input type="text" id="cidade" placeholder="Cidade" required>
+                        <button type="submit" class="btn btn-inscrever">Inscrever-se</button>
+                        <button type="button" class="btn btn-whatsapp" id="btnWhatsapp">
+                            <span class="fab fa-whatsapp"></span> Receba conteúdos via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--JS AO LADO DO FEEDBACK-->
+    <script> document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("formNewsletter");
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Impede o envio do formulário
+
+                // Mensagem fictícia de confirmação
+                alert("Logo, logo vamos estar melhorando o site e, futuramente, quem sabe, tornando esse projeto realidade. Sua participação nos inspira! 😊");
+
+                // (Opcional) Limpa os campos
+                form.reset();
+            });
+
+            // Botão do WhatsApp
+            const btnWhatsapp = document.getElementById("btnWhatsapp");
+            btnWhatsapp.addEventListener("click", function () {
+                alert("Este recurso estará disponível em breve!");
+            });
+        });</script>
+
+
+    <script>
+        document.getElementById("feedbackForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita o envio real do formulário
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+            const feedbackDiv = document.getElementById("feedbackMessage");
+
+            if (name === "" || email === "" || message === "") {
+                feedbackDiv.innerHTML = "<p style='color: red;'>Por favor, preencha todos os campos.</p>";
+                return;
+            }
+
+            // Exibe a mensagem de agradecimento diretamente
+            feedbackDiv.innerHTML = `
+            <div style="padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 15px;">
+                <strong>Obrigado, ${name}!</strong> 💬<br>
+                Seu feedback foi recebido com carinho. 💚<br>
+                Continuamos trabalhando para melhorar a plataforma da <strong>ConectAção</strong> com a sua ajuda!
+            </div>
+        `;
+
+            // Limpa os campos do formulário
+            document.getElementById("feedbackForm").reset();
+        });
+    </script>
+
+
+    <!--FOOTER-->
+
+    <footer class="footer-conectacao">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Links Rápidos</h3>
+                <a href="../index.html">Início</a>
+                <a href="events.html">Eventos</a>
+                <a href="volunteers.html">Voluntários</a>
+                <a href="profile.html">Perfil</a>
+                <a href="reports.html">Relatório</a>
+            </div>
+            <div class="footer-box">
+                <h3>Siga-nos</h3>
+                <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+                <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.google.com.br/" target="_blank"><i class="fab fa-google"></i> Google</a>
+            </div>
+            <div class="footer-box">
+                <h3>ConectAção</h3>
+                <p>Projeto Interdisciplinar - ESBAM &copy; 2025</p>
+
+                <p> <strong>Alunos:</strong> Juliana Marques;
+                    Vinicius Vasconcelos;
+                    Filipe Wildes;
+                    Beatriz de Sousa;
+                    Kauan Moreira.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--RELATORIO DO JS-->
+
+    <script>
+        document.getElementById('generate-report-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita o recarregamento da página
+
+            const reportType = document.getElementById('report-type').value;
+            const startDate = document.getElementById('report-period-start').value;
+            const endDate = document.getElementById('report-period-end').value;
+            const outputDiv = document.getElementById('report-output');
+
+            let reportContent = '';
+
+            if (!startDate || !endDate) {
+                reportContent = '<p style="color: red;">Por favor, selecione o período de início e fim.</p>';
+            } else {
+                switch (reportType) {
+                    case 'volunteer_participation':
+                        reportContent = `
+                <h4>Relatório de Participação de Voluntários</h4>
+                <p>Período: ${startDate} até ${endDate}</p>
+                <ul>
+                    <li>Maria Souza - 5 eventos</li>
+                    <li>João Lima - 3 eventos</li>
+                    <li>Fernanda Costa - 4 eventos</li>
+                </ul>
+                `;
+                        break;
+                    case 'event_summary':
+                        reportContent = `
+                <h4>Resumo de Eventos</h4>
+                <p>Período: ${startDate} até ${endDate}</p>
+                <ul>
+                    <li>Campanha de Arrecadação - 120 participantes</li>
+                    <li>Mutirão de Limpeza - 85 participantes</li>
+                </ul>
+                `;
+                        break;
+                    case 'community_impact':
+                        reportContent = `
+                <h4>Impacto na Comunidade (Simulado)</h4>
+                <p>Período: ${startDate} até ${endDate}</p>
+                <p>Relatório gerado com dados fictícios para demonstração.</p>
+                <ul>
+                    <li>Redução de resíduos: 2 toneladas</li>
+                    <li>Pessoas impactadas: 350</li>
+                </ul>
+                `;
+                        break;
+                }
+            }
+
+            // Adiciona um botão de limpar no final do relatório
+            reportContent += `<button id="clear-report">🗑️ Limpar Relatório</button>`;
+
+            outputDiv.innerHTML = reportContent;
+
+            // Adiciona o evento para o botão limpar
+            document.getElementById('clear-report').addEventListener('click', function () {
+                outputDiv.innerHTML = '';  // limpa o conteúdo do relatório
+            });
+        });
+    </script>
+
+
+
+
+    <script src="../assets/js/dashboard.js"></script>
+    <script src="../assets/js/tema.js"></script>
+</body>
+
+</html>

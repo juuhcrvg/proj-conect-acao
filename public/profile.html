@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - Conect Ação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+  <link rel="stylesheet" href="../assets/css/respoetema.css">
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo-container">
+        <img src="../public/img/Picsart_25-05-20_22-23-51-427.png" alt="Logo da Plataforma" id="logo">
+        <h1>ConectAção</h1>
+      </div>
+
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../index.html" class="nav-link">Início</a></li>
+          <li><a href="events.html">Eventos</a></li>
+          <li><a href="volunteers.html" class="nav-link">Voluntários</a></li>
+          <li><a href="profile.html" class="nav-link">Perfil</a></li> 
+          <li><a href="reports.html" class="nav-link">Relatórios</a></li>
+        </ul>
+      </nav>
+
+      <!-- BOTÃO TEMA -->
+      <button id="toggle-theme" title="Alternar tema">
+        🌙
+      </button>
+      <button class="menu-toggle" aria-label="Abrir menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+  <!--JS DO MENU RESPONSIVO-->
+  <script>
+    const toggleMenu = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+
+    toggleMenu.addEventListener('click', () => {
+      nav.classList.toggle('active');
+      toggleMenu.classList.toggle('hidden'); // <- nova linha
+    });
+  </script>
+
+
+  <main class="container">
+    <section id="user-profile">
+      <h3>Perfil</h3>
+      <p> <strong>ConectAção: <br> Transformando Comunidades, Conectando Pessoas</strong>
+
+      <p>O ConectAção nasceu com o propósito de fortalecer iniciativas sociais, conectando voluntários a projetos que
+        fazem a diferença na vida de milhares de pessoas. <strong>Em Manaus, eventos como o Festival Folclórico do
+          Amazonas, o Arraial APAE ano e a atuação da Fundação Matias Machline</strong> são exemplos do poder da
+        comunidade em unir
+        tradição, cultura e solidariedade.</p>
+
+      <p>Acreditamos que ser voluntário é transformar realidades, oferecendo tempo, talento e dedicação para que cada
+        evento e ação social alcance mais pessoas e gere impacto positivo. <strong>Seja através da educação inclusiva,
+          da
+          valorização cultural ou do fortalecimento da economia criativa, nossa missão é conectar quem quer ajudar com
+          quem precisa de apoio.</strong></p>
+
+      Seja parte dessa rede de transformação. Junte-se ao ConectAção e faça a diferença! 🚀✨</p>
+
+    </section>
+
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+
+          <img src="img/vol3.jpg" class="card-img-top" alt="Fundação Matias Machline">
+          <div class="card-body">
+            <h5 class="card-title"> <a href="https://www.fundacaomatiasmachline.org.br/seja-voluntario/"
+                target="_blank">Fundação Matias Machline</a></h5>
+            <p class="card-text">A <strong>Fundação Matias Machline (FMM) em Manaus</strong>, apoiada pela
+              <strong>Digitron da Amazônia</strong>, oferece ensino de excelência a jovens carentes, incluindo
+              alimentação, fardamento e suporte médico. Em seus 33 anos, a FMM tem transformado vidas com ensino técnico
+              em Mecatrônica, Eletrônica e Informática.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/vol4.jpeg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> <a
+                href="https://emtempo.com.br/401385/cultura/apae-promove-arraial-com-entrada-gratuita-e-atracoes-culturais-em-manaus/"
+                target="_blank">Apae de Manaus</a></h5>
+            <p class="card-text">A <strong>Apae de Manaus</strong> realizará o <strong>Arraial APAEano no dia 13 de
+                junho de
+                2025, às 18h30, na sede da instituição, com entrada gratuita</strong>. O evento promove a inclusão
+              social e
+              valoriza a cultura regional, com apresentações artísticas e barracas de comidas típicas.
+
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/vol5.jpg" width="450px" height="450px" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"> <a href="https://www.manaus.am.gov.br/manauscult/eventos/festival-folclorico/"
+                target="_blank">Festival Folclórico do Amazonas</a></h5>
+            <p class="card-text">O <strong>Festival Folclórico do Amazonas</strong> é o maior evento cultural de Manaus,
+              reunindo
+              milhares de pessoas entre dançarinos, organizadores e público. Além de celebrar a cultura popular, o
+              festival impulsiona a economia local, beneficiando artistas, artesãos e empreendedores da gastronomia.
+
+              Em 2022, mais de 80 mil pessoas prestigiaram apresentações de 144 grupos, incluindo quadrilhas, cirandas,
+              tribos e bumbás. <strong> A 65ª edição, em 2023, ocorreu de 11 a 25 de junho no Centro Cultural dos
+                Povos</strong> da
+              Amazônia, com atrações diversas, feira de artesanato, área gastronômica e espaço infantil.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="img/vol6.jpg" width="450px" height="450px" class="card-img-top" alt="Festival de Parintins">
+          <div class="card-body">
+            <h5 class="card-title"> <a
+                href="https://brasilescola.uol.com.br/folclore/festival-de-parintins.htm">Festival de Parintins</a></h5>
+            <p class="card-text">" <strong>O Festival de Parintins</strong> é uma festividade folclórica que ocorre
+              anualmente na cidade
+              de Parintins, no estado do Amazonas, e que se baseia na tradição do boi-bumbá, apresentando elementos como
+              música, ritual, e o emblemático auto do boi. Composto por dois bois-bumbás rivais, <strong>o Boi Garantido
+                e o Boi
+                Caprichoso</strong>, o festival é marcado por intensa rivalidade, mobilizando as apaixonadas torcidas
+              vermelha e
+              azulada. "
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <!--FOOTER-->
+
+  <footer class="footer-conectacao">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>Links Rápidos</h3>
+        <a href="../index.html">Início</a>
+        <a href="events.html">Eventos</a>
+        <a href="volunteers.html">Voluntários</a>
+        <a href="profile.html">Perfil</a>
+        <a href="reports.html">Relatório</a>
+      </div>
+      <div class="footer-box">
+        <h3>Siga-nos</h3>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://www.google.com.br/" target="_blank"><i class="fab fa-google"></i> Google</a>
+      </div>
+      <div class="footer-box">
+        <h3>ConectAção</h3>
+        <p>Projeto Interdisciplinar - ESBAM &copy; 2025</p>
+
+        <p> <strong>Alunos:</strong> Juliana Marques;
+          Vinicius Vasconcelos;
+          Filipe Wildes;
+          Beatriz de Sousa;
+          Kauan Moreira.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="../assets/js/dashboard.js"></script>
+  <script src="../assets/js/tema.js"></script>
+</body>
+
+</html>

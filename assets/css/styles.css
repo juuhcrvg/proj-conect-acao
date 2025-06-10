@@ -1,0 +1,299 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Layout principal */
+.layout-wrapper {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    background: #fff;
+ 
+}
+
+.image-side {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+height: auto;
+    width: auto;
+}
+/* Dentro de @media (min-width: 1025px) ou como estilo base para .image-side img */
+.image-side img {
+    max-width: 100%;  /* Imagem ocupa no máximo a largura do .image-side */
+    height: auto;     /* Mantém a proporção correta da imagem */
+    display: block;   /* Remove espaços extras */
+    object-fit: cover; /* Faz a imagem preencher o .image-side, cortando se necessário */
+    border-radius: 2PX;                   /* ou object-fit: contain; para ver a imagem inteira */
+    box-shadow:0 14px 28px rgba(0, 0, 0, 0.25), 
+                0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.container { /* Ou #container */
+    background: #fff; 
+    border-radius: 0; /* Bordas retas */
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
+                0 10px 10px rgba(0, 0, 0, 0.22);
+    /* ...outros estilos... */
+}
+form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+input {
+    background: #eee;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+}
+
+button {
+    border-radius: 20px;
+    border: 1px solid #ff4b2b;
+    background: #ff4b2b;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 12px 45px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+    margin: 8px 0;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Links: Esqueceu senha, Criar conta */
+a {
+    color: #333;
+    font-size: 14px;
+    margin-top: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+a:hover {
+    color: #f82904;
+    transform: scale(1.05);
+}
+
+a:active {
+    color: #d9361e;
+    transform: scale(0.98);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #ff4b2b;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    display: none;
+    z-index: 10;
+}
+
+/* Telas alternadas */
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in-container {
+    left: 0;
+    z-index: 2;
+}
+
+.sign-up-container,
+.forgot-password-container,
+.logged-in-container {
+    left: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition-delay: 0.6s;
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.right-panel-active .forgot-password-container {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.logged-in .logged-in-container {
+    transform: translateX(-100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+/* RESPONSIVIDADE  */
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    body {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 20px;
+    }
+
+    .layout-wrapper {
+        flex-direction: column;
+        height: auto;
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .image-side {
+        display: none;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    input, button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    a {
+        font-size: 14px;
+    }
+}
+
+/* Celulares grandes e tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+    .layout-wrapper {
+        flex-direction: column;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .image-side {
+        height: 200px;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .image-side img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    form {
+        padding: 30px;
+    }
+
+    input, button {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    a {
+        font-size: 15px;
+    }
+}
+
+/* Tablets maiores e notebooks pequenos */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .layout-wrapper {
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+    }
+
+    .image-side {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .image-side img {
+        width: 100%;
+        height: auto;
+        max-width: 350px;
+    }
+
+    .container {
+        flex: 1;
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    form {
+        padding: 40px;
+    }
+}
+
+/* Notebooks e desktops */
+@media (min-width: 1025px) {
+    .layout-wrapper {
+        flex-direction: row;
+        max-width: 1000px;
+        height: 600px;
+        margin: auto;
+    }
+
+    .image-side img {
+        max-width: 600px;
+        height: 120%;
+    }
+
+    .container {
+        width: 400px;
+    }
+}
+
+
+
